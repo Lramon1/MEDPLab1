@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BALANCE — Wake Up</title>
+    <style>
+        body, html {
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            width: 100%;
+            font-family: 'Times New Roman', serif;
+            background: linear-gradient(to top, 
+                #77011e 0%, 
+                #77011e 15%, 
+                rgba(72, 1, 19, 0.5) 30%, 
+                white 60%, 
+                white 100%);
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center;
+            text-align: center; 
+            color: #333;
+        }
+
+        .truth { 
+            font-size: 1.5rem; 
+            max-width: 600px; 
+            margin-bottom: 10px; 
+            font-style: italic;
+            color: #000000; 
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        h1 { 
+            color: #800020; 
+            letter-spacing: 10px; 
+            text-transform: uppercase; 
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.1rem;
+            max-width: 500px;
+            line-height: 1.5;
+            color: #444;
+            margin-bottom: 40px;
+        }
+
+        .btn { 
+            text-decoration: none; 
+            color: white; 
+            font-weight: bold; 
+            border: 2px solid white; 
+            padding: 12px 25px;
+            transition: all 0.3s;
+            background-color: transparent;
+            letter-spacing: 2px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background-color: white;
+            color: #800020;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="truth">
+        "NICE CHOICE! I'm so good. Live a good life my dear friend."
+    </div>
+
+    <h1>YOU WAKE UP</h1>
+    
+    <p>The white space is gone. The voice is silent.<br>
+    The balance has been served, as you fate is awaiting. 
+    You're finally free of this absurd dream.
+    Go back to your real being.</p>
+
+    <a href="javascript:void(0)" class="btn" onclick="goToFinalOutcome()">LIVE YOUR HAPPY ENDING</a>
+
+    <script>
+        function goToFinalOutcome() {
+            // Tomamos la última elección si existe
+            const finalChoice = localStorage.getItem('finalDecisionAttempted') || localStorage.getItem('userSelection');
+
+            console.log("Final choice stored:", finalChoice);
+
+            if (finalChoice === 'past') {
+                window.location.href = 'happyending.html';
+            } else if (finalChoice === 'money') {
+                window.location.href = 'happyending2.html';
+            } else if (finalChoice === 'future') {
+                window.location.href = 'happyending3.html';
+            } else {
+                // fallback si no hay selección
+                alert("No choice detected. Going back to main options.");
+                window.location.href = 'options.html';
+            }
+        }
+    </script>
+
+</body>
+</html>

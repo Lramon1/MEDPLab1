@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BALANCE — Final Choice</title>
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Times New Roman', serif;
+            overflow: hidden;
+            background-image: url('images/person.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .overlay {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 30px;
+            background: radial-gradient(circle, rgba(128, 0, 32, 0.75) 0%, rgba(0, 0, 0, 0.7) 100%);
+        }
+
+        .voice-text {
+            font-size: 2.2rem;
+            letter-spacing: 12px;
+            color: #d1c7a7;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            text-align: center;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+        
+        .sub-text {
+            color: #d1c7a7;
+            font-size: 0.9rem;
+            max-width: 450px;
+            margin-bottom: 35px;
+            font-style: italic;
+            opacity: 0;
+            transition: opacity 1.2s ease;
+            text-align: center;
+        }
+
+        /* CAJITA DE DIÁLOGO */
+        .dialogue-text {
+            max-width: 600px;
+            padding: 20px 30px;
+            font-size: 1rem;
+            color: #333;
+            font-style: italic;
+            background: #f7f1f1;
+            border-left: 6px solid #800020;
+            box-shadow: 0 0 20px rgba(0,0,0,0.25);
+            margin-bottom: 50px;
+            opacity: 0;
+            transition: opacity 1.2s ease;
+        }
+
+        .options {
+            display: flex;
+            gap: 50px;
+            opacity: 0;
+            transition: opacity 1.2s ease;
+        }
+
+        .option {
+            text-align: center;
+            animation: floating 3.5s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .option-img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1.5px solid #d1c7a7;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            filter: contrast(1.2);
+        }
+
+        .option-img:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 25px rgba(209, 199, 167, 0.4);
+        }
+
+        .option p {
+            margin-top: 12px;
+            font-size: 0.75rem;
+            color: #d1c7a7;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            max-width: 120px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        a { text-decoration: none; }
+    </style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <h2 class="voice-text" id="voice-title">CHANGE</h2>
+    
+    <p class="sub-text" id="voice-sub">" We start again. Choose! Your yesterday will change." </p>
+
+    <div class="dialogue-text" id="dialogue">
+        "Again… why does it feel different?"
+    </div>
+
+    <div class="options" id="options">
+
+        <div class="option">
+            <a href="wakeup.html" onclick="localStorage.setItem('userSelection', 'past')">
+                <img src="images/past.jpg" alt="Past" class="option-img">
+                <p>Change something of your past</p>
+            </a>
+        </div>
+
+        <div class="option">
+            <a href="wakeup.html" onclick="localStorage.setItem('userSelection', 'money')">
+                <img src="images/money.jpg" alt="Wealth" class="option-img">
+                <p>One billion dollars</p>
+            </a>
+        </div>
+
+        <div class="option">
+            <a href="wakeup.html" onclick="localStorage.setItem('userSelection', 'future')">
+                <img src="images/future.jpg" alt="Future" class="option-img">
+                <p>Know about your future</p>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    setTimeout(() => {
+        document.getElementById("voice-title").style.opacity = "1";
+    }, 700);
+
+    setTimeout(() => {
+        document.getElementById("voice-sub").style.opacity = "1";
+    }, 1700);
+
+    setTimeout(() => {
+        document.getElementById("dialogue").style.opacity = "1";
+    }, 2200);
+
+    setTimeout(() => {
+        document.getElementById("options").style.opacity = "1";
+    }, 3600);
+</script>
+
+</body>
+</html>

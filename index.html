@@ -1,93 +1,72 @@
-<!doctype html> 
-<html> 
-  <head> 
-    <title>Leslie Ramon</title> 
-  <style>
-  body { 
-        background-color: lavender;
-        color: black; 
-      }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BALANCE</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Times New Roman', serif;
+            overflow: hidden;
+            background-color: black;
+            cursor: crosshair;
+        }
+
+        .intro-scene {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 6rem;
+            letter-spacing: 25px;
+            color: #800020;
+            text-shadow: 0 0 15px rgba(128, 0, 32, 0.4);
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+            transition: color 0.5s, transform 0.5s;
+        }
+
+        h1:hover {
+            color: #a52a2a;
+            transform: scale(1.02);
+        }
+
+        .click-text {
+            position: absolute;
+            bottom: 50px;
+            color: #444;
+            letter-spacing: 5px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 0.3; }
+            25%, 75% { opacity: 1; }
+        }
     </style>
-   </head> 
-  <body>
-    <h1 style="color:purple; text-align:center;">Leslie Ramon</h1>
-    <br><br>
-    <h4><a href="reflections.html">Reading Reflections</a></h4>
-    <h4><a href="inlab.html">In-Lab Assignments </a></h4>
-    
-    
-    <h2>Homeworks:</h2> 
-    <ul> 
-      <li>Homework #1</li> 
-      <p>A student pursuing Studio Art major and looking for more related to it. One day I just realize that I was able to draw many things more easily than others, 
-        so it became as a goal for me to improve my skill. Also, I wanted to learn more about art and feed my knowledge. In my latest 13 or even early, I experimented
-        with Canva to do covers for projects of my school or for wherever topic that I was interested in, at that moment. During High School, I was in an internship 
-        called Creative Art Works, where I learned how to use Photoshop and a little of Adobe Premier Pro.
-      </p> 
-      
-      <li>Homework #2
-    <ul>
-      <li><a href="homework2-image1.html">Homework 2 Image 1</a></li>
-      <li><a href="homework2-image2.html">Homework 2 Image 2</a></li>
-    </ul>
-  </li>
+</head>
+<body onclick="window.location.href='options.html'">
 
-  <li>Homework #3
-    <ul>
-      <li><a href="homework3-image1.html">Homework 3 Image 1</a></li>
-      <li><a href="homework3-image2.html">Homework 3 Image 2</a></li>
-      <li><a href="homework3-image3.html">Homework 3 Image 3</a></li>
-    </ul>
-  </li>
+    <div class="intro-scene">
+        <h1>BALANCE</h1>
+        <p class="click-text">To wake up choose</p>
+    </div>
 
-  <li>Homework #3 Part 2
-    <ul>
-      <li><a href="homework3part2.html">Homework 3 Part 2 Image 1</a></li>
-      <li><a href="homework3part2(2).html">Homework 3 Part 2 Image 2</a></li>
-    </ul>
-  </li>
-
-  <li>Homework #4
-    <ul>
-      <li><a href="homework4part1.html">Homework 4 Image 1</a></li>
-      <li><a href="homework4part2.html">Homework 4 Image 2</a></li>
-    </ul>
-  </li>
-
-   <li>Homework #5
-    <ul>
-      <li><a href="homework5part1.html">Homework 5 Image 1</a></li>
-      <li><a href="homework5part2.html">Homework 5 Image 2</a></li>
-    </ul>
-  </li>
-
-     <li>Homework #7
-    <ul>
-      <li><a href="homework7only.html">Homework 7 Image 1</a></li>
-    </ul>
-  </li>
-
-      <li>Homework #8
-    <ul>
-      <li><a href="homework8part1.html">Homework 8 Gif 1</a></li>
-      <li><a href="homework8part2.html">Homework 8 Gif 2</a></li>
-    </ul>
-  </li>
-
-      <li>Homework #9
-    <ul>
-      <li><a href="homework9.html">Homework 9 Graphs </a></li>
-    </ul>
-  </li>
-      <li>Homework #10
-    <ul>
-      <li><a href="homework10.html">Homework 10 Interactive Story Map </a></li>
-      <li><a href="homework10part2.html">Homework 10 Interactive story </a></li>
-    </ul>
-  </li>
-    
-    <br> 
-    
-  </body> 
+</body>
 </html>
-

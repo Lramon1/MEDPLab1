@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BALANCE — The Choice</title>
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Times New Roman', serif;
+            overflow: hidden;
+            background-image: url('images/person.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .scene {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* TITLE */
+        .voice-text {
+            font-size: 2.2rem;
+            letter-spacing: 12px;
+            color: #800020;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        /* VOICE (NORMAL SIZE, BLACK) */
+        .sub-text {
+            font-size: 1rem;
+            color: #000000;
+            font-style: italic;
+            letter-spacing: 2px;
+            margin-bottom: 35px;
+            opacity: 0;
+            transition: opacity 1.2s ease;
+        }
+
+        /* DIALOGUE BOX — OUTCOME STYLE */
+        .dialogue-text {
+            max-width: 600px;
+            padding: 20px 30px;
+            font-size: 1rem;
+            color: #333;
+            font-style: italic;
+            background: #f7f1f1;
+            border-left: 6px solid #800020;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+            margin-bottom: 45px;
+            opacity: 0;
+            transition: opacity 1.2s ease;
+        }
+
+        /* OPTIONS */
+        .options {
+            display: flex;
+            gap: 50px;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+
+        .option {
+            text-align: center;
+            animation: floating 3.5s ease-in-out infinite;
+        }
+
+        .option:nth-child(2) { animation-delay: 0.4s; }
+        .option:nth-child(3) { animation-delay: 0.8s; }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .option-img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1.5px solid rgba(128, 0, 32, 0.3);
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .option-img:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 25px rgba(128, 0, 32, 0.4);
+            border: 1.5px solid #800020;
+        }
+
+        .option p {
+            margin-top: 12px;
+            font-size: 0.75rem;
+            color: #800020;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            max-width: 120px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        a { text-decoration: none; }
+    </style>
+</head>
+
+<body>
+
+<div class="scene">
+
+    <h2 class="voice-text">THE CHOICE</h2>
+
+    <p class="sub-text" id="voiceLine">
+        "Choose. Choose. Get your happy ending."
+    </p>
+
+    <div class="dialogue-text" id="dialogue">
+        "What? Choose what? I don't understand… Is this a dream?"
+    </div>
+
+    <div class="options" id="options">
+
+        <div class="option">
+            <a href="chest.html" onclick="localStorage.setItem('userSelection', 'past')">
+                <img src="images/past.jpg" class="option-img">
+                <p>Change something of your past</p>
+            </a>
+        </div>
+
+        <div class="option">
+            <a href="chest.html" onclick="localStorage.setItem('userSelection', 'money')">
+                <img src="images/money.jpg" class="option-img">
+                <p>One billion dollars</p>
+            </a>
+        </div>
+
+        <div class="option">
+            <a href="chest.html" onclick="localStorage.setItem('userSelection', 'future')">
+                <img src="images/future.jpg" class="option-img">
+                <p>Know about your future</p>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // Voice appears
+    setTimeout(() => {
+        document.getElementById("voiceLine").style.opacity = "1";
+    }, 800);
+
+    // Dialogue appears
+    setTimeout(() => {
+        document.getElementById("dialogue").style.opacity = "1";
+    }, 2000);
+
+    // Options appear
+    setTimeout(() => {
+        document.getElementById("options").style.opacity = "1";
+    }, 3500);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BALANCE — The Offering</title>
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Times New Roman', serif;
+            overflow: hidden;
+            background-color: #800020;
+        }
+
+        /* VIÑETA OSCURA */
+        .overlay {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+            background: radial-gradient(circle, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.75) 100%);
+            text-align: center;
+        }
+
+        .voice-text {
+            font-size: 2.5rem;
+            letter-spacing: 10px;
+            color: #d1c7a7;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+        }
+
+        .sub-text {
+            color: #d1c7a7;
+            font-size: 0.9rem;
+            max-width: 450px;
+            margin-bottom: 35px;
+            font-style: italic;
+            opacity: 0;
+            transition: opacity 1.2s ease;
+        }
+
+        /* CAJITA DE DIÁLOGO */
+        .dialogue-text {
+            max-width: 600px;
+            padding: 20px 30px;
+            font-size: 1rem;
+            color: #333;
+            font-style: italic;
+            background: #f7f1f1;
+            border-left: 6px solid #800020;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            margin-bottom: 45px;
+            opacity: 0;
+            transition: opacity 1.2s ease;
+        }
+
+        .options {
+            display: flex;
+            gap: 60px;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+
+        .option {
+            text-align: center;
+            animation: nervous-float 2.5s ease-in-out infinite;
+        }
+
+        @keyframes nervous-float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .option-img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #d1c7a7;
+            cursor: pointer;
+            transition: 0.3s;
+            filter: grayscale(0.5) contrast(1.2);
+        }
+
+        .option-img:hover {
+            transform: scale(1.1);
+            filter: grayscale(0);
+            box-shadow: 0 0 20px #d1c7a7;
+        }
+
+        .option p {
+            margin-top: 15px;
+            font-size: 0.7rem;
+            color: #d1c7a7;
+            letter-spacing: 3px;
+        }
+
+        a { text-decoration: none; }
+    </style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <h2 class="voice-text">THE OFFERING</h2>
+
+    <p class="sub-text" id="voice">
+        "Open one. Open one and your fate you will know."
+    </p>
+
+    <div class="dialogue-text" id="dialogue">
+        "...Why are you so happy? What is inside those chests?"
+    </div>
+
+    <div class="options" id="options">
+
+        <div class="option">
+            <a href="outcome1.html" onclick="localStorage.setItem('chestOpened','1')">
+                <img src="images/chest.jpg" class="option-img">
+                <p>.</p>
+            </a>
+        </div>
+
+        <div class="option">
+            <a href="outcome2.html" onclick="localStorage.setItem('chestOpened','2')">
+                <img src="images/chest.jpg" class="option-img">
+                <p>.</p>
+            </a>
+        </div>
+
+        <div class="option">
+            <a href="outcome3.html" onclick="localStorage.setItem('chestOpened','3')">
+                <img src="images/chest.jpg" class="option-img">
+                <p>.</p>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // Voz
+    setTimeout(() => {
+        document.getElementById("voice").style.opacity = "1";
+    }, 800);
+
+    // Diálogo
+    setTimeout(() => {
+        document.getElementById("dialogue").style.opacity = "1";
+    }, 2000);
+
+    // Cofres
+    setTimeout(() => {
+        document.getElementById("options").style.opacity = "1";
+    }, 3500);
+</script>
+
+</body>
+</html>

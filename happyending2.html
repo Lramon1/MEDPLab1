@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALANCE — The Wealth Outcome</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Times New Roman', serif;
+            background-color: #f0f0f0; 
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 650px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            border: 1px solid #800020;
+            box-shadow: 0 10px 40px rgba(128, 0, 32, 0.2);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+            color: #800020; 
+            text-transform: uppercase;
+        }
+
+        .choice-item {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .choice-img {
+            width: 100%;
+            max-width: 450px;
+            height: 280px;
+            object-fit: cover;
+            margin-bottom: 25px;
+            border: 1px solid #800020;
+            filter: contrast(1.2) saturate(0.8);
+        }
+
+        strong {
+            display: block;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            color: #800020;
+        }
+
+        .dialogue-text {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            font-style: italic;
+            color: #444;
+            background: rgba(128, 0, 32, 0.05);
+            padding: 20px;
+            border-left: 4px solid #800020;
+        }
+
+        .warning-text {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #800020;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .restart {
+            margin-top: 50px;
+            text-decoration: none;
+            color: #800020;
+            font-size: 0.8rem;
+            border: 1px solid #800020;
+            padding: 12px 30px;
+            transition: 0.4s;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .restart:hover {
+            background-color: #800020;
+            color: white;
+            letter-spacing: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>The Outcome</h2>
+
+        <div class="choice-item">
+            <!-- Imagen de la riqueza (Money) generada en Firefly -->
+            <img src="images/money.jpg" alt="Wealth choice outcome" class="choice-img">
+            
+            <strong>MONEY</strong>
+            
+            <div class="dialogue-text">
+                "I'm paying for them!! Why do they suffer even more? They keep smiling. Will death come?"
+            </div>
+
+            <p class="warning-text">You deserve more, that's why the ones you love are happy togive you more.</p>
+        </div>
+
+        <a href="index.html" class="restart">Restart the Cycle</a>
+    </div>
+
+</body>
+</html>
